@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Source+Code+Pro&display=swap');
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #08080A;
+  margin: 0;
+  overflow: hidden;
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  transition: 0.5s ease-out all;
+}
+
+#content{
+  margin: 30px 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#header{
+  margin: 0;
+  text-align: left;
+}
+
+#title, #subtitle, #color{
+  font-family: 'Source Code Pro', monospace;
+}
+
+#title + #subtitle{
+  margin-top: -15px;
+}
+
+#color{
+  background-color: #798fd2;
+  padding: 0px 5px;
+  margin: 0;
+}
+
+#text{
+  margin: 25px 0 0 0;
+  text-align: left;
+}
+
+a{
+  color: #798fd2;
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.social{
+  border: none;
+  background: transparent;
+  margin: 5px;
+}
+
+.social img{
+  width: 43px;
+  height: 43px;
+  border: none;
+  border-radius: 9px;
+  padding: 4px;
+  border: 1px solid transparent;
+  transition: border 0.2s ease, opacity 0.2s ease;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.social img:hover{
+  border: 1px solid #798fd2;
+}
+
+.social img:active{
+  border: 1px solid transparent;
+}
+
+#copyright{
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  font-size: 12px;
+  margin: 0;
+  color: #798fd2;
+}
+
+#marquee{
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 1rem;
+  padding: 3px 0px;
+  background-color: #798fd2;
+}
+
+#marquee:hover ul {
+  animation-play-state: paused;
+}
+
+#marquee ul{
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  min-width: 100%;
+  animation: scroll 15s linear infinite;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  transition: animation-play-state 0.5s ease;
+  color: #ffffff;
+}
+
+#marquee ul a{
+  color: #ffffff;
+  transition: font-weight 0s;
+}
+
+#marquee ul a:hover{
+  font-weight: bold;
+}
+
+@keyframes scroll{
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 1rem));
+  }
+}
+
+/* Responsiveness */
+
+@media (max-width: 767px) {
+  html, body{
+    overflow-x: hidden;
+    overflow-y: scroll;
+    margin-bottom: 5vh;
+  }
+  
+	#header, #text{
+    text-align: center;
+  }
+
+  #content, #header, #text{
+    width: 75vw;
+  }
+
+  #socials{
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 330px) {
+  body{
+    margin-top: 25vh;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #content, #header, #text{
+    max-width: 30vw;
+  }
+}
+
+.seeThrough{
+  background: url('/Assets/Images/Background.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1.seeThrough{
+  -webkit-background-clip: text;
+  color: transparent;
+  background-size: 500px;
+  font-size: 500px
+}
